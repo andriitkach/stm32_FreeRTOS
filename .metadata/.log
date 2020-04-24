@@ -1,0 +1,138 @@
+!SESSION 2020-04-20 15:54:48.560 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2020-04-20 15:55:04.033
+!MESSAGE Loading product manager
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2020-04-20 15:55:04.083
+!MESSAGE OS info: Linux, 4.15.0-96-generic, amd64
+
+!ENTRY TrueSTUDIO 1 0 2020-04-20 15:55:04.686
+!MESSAGE Target: STM32, Version: 9.3.0, Build date: 20190212-0734, Installation dir: /opt/Atollic_TrueSTUDIO_for_STM32_x86_64_9.3.0/ide/
+
+!ENTRY TrueSTUDIO 1 0 2020-04-20 15:55:04.687
+!MESSAGE Workspace: /home/andrii/STM32/STM32FreeRTOS
+
+!ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2020-04-20 15:55:05.678
+!MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
+
+!ENTRY org.eclipse.jface 2 0 2020-04-20 15:55:05.701
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-04-20 15:55:05.701
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7c31e410,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@9880a15,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2020-04-20 15:55:05.702
+!MESSAGE Code Review is up.
+
+!ENTRY org.eclipse.core.resources 4 77 2020-04-20 15:56:47.934
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2020-04-20 15:56:47.934
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2020-04-20 15:56:47.934
+!MESSAGE /home/andrii/STM32/STM32FreeRTOS overlaps the workspace location: /home/andrii/STM32/STM32FreeRTOS
+
+!ENTRY org.eclipse.core.resources 4 77 2020-04-20 16:07:54.556
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2020-04-20 16:07:54.556
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2020-04-20 16:07:54.556
+!MESSAGE /home/andrii/STM32/STM32FreeRTOS overlaps the workspace location: /home/andrii/STM32/STM32FreeRTOS
+
+!ENTRY org.eclipse.core.resources 4 77 2020-04-20 16:08:23.522
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2020-04-20 16:08:23.522
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2020-04-20 16:08:23.522
+!MESSAGE /home/andrii/STM32/STM32FreeRTOS overlaps the workspace location: /home/andrii/STM32/STM32FreeRTOS
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:09:52.188
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:09:52.190
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:09:52.193
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:09:52.194
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2020-04-20 16:09:52.222
+!MESSAGE MyFreeRTOS needs property 'com.atollic.truestudio.general.runtimelib.117697892' fixed. Fixing to 'com.atollic.truestudio.ld.general.clib.small'.
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2020-04-20 16:09:52.222
+!MESSAGE Failed to get device info (Debug) for project MyFreeRTOS
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2020-04-20 16:09:52.223
+!MESSAGE Failed to get device info (Debug) for project MyFreeRTOS
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2020-04-20 16:09:52.223
+!MESSAGE Failed to get device info (Debug) for project MyFreeRTOS
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2020-04-20 16:09:52.223
+!MESSAGE MyFreeRTOS needs property 'com.atollic.truestudio.general.runtimelib.1952608491' fixed. Fixing to 'com.atollic.truestudio.ld.general.clib.small'.
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2020-04-20 16:09:52.224
+!MESSAGE Failed to get device info (Release) for project MyFreeRTOS
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2020-04-20 16:09:52.224
+!MESSAGE Failed to get device info (Release) for project MyFreeRTOS
+
+!ENTRY com.atollic.truestudio.mbs 2 0 2020-04-20 16:09:52.224
+!MESSAGE Failed to get device info (Release) for project MyFreeRTOS
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:09:52.245
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:09:52.246
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:09:52.249
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:09:52.249
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:09:52.293
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:09:52.293
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:10:18.386
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:10:18.901
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:10:19.432
+!MESSAGE Failed to find device info
+
+!ENTRY com.atollic.truestudio.mbs 4 0 2020-04-20 16:10:19.896
+!MESSAGE Failed to find device info
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-04-20 16:10:39.331
+!MESSAGE Indexed 'MyFreeRTOS' (38 sources, 82 headers) in 1.63 sec: 9,718 declarations; 32,960 references; 1 unresolved inclusions; 34 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2020-04-20 16:14:42.893
+!MESSAGE Unloading product manager
