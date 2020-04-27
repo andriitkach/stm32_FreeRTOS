@@ -128,6 +128,7 @@ void vTaskSendUART2_DMA (void *pSenderUART2_DMA) {
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+	DWT->CTRL |= (1<<0);
 
   /* USER CODE END 1 */
 
@@ -152,6 +153,9 @@ int main(void)
   MX_DMA_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  SEGGER_SYSVIEW_Conf();
+  vSetVarulMaxPRIGROUPValue();
+  SEGGER_SYSVIEW_Start();
   /*
   BaseType_t xTaskCreate(
   							  TaskFunction_t pvTaskCode,
