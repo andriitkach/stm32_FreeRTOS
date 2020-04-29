@@ -70,18 +70,22 @@ void StartDefaultTask(void *argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+int delay_ms = 500;
+TaskHandle_t blinkerHandle;
 
 //HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
 void vTaskBlinker(void *pBlinker) {
-	int delay_ms = 500;
-	TickType_t delay_ticks = delay_ms / portTICK_PERIOD_MS;
+	uint32_t notificationValue;
+//	TickType_t delay_ticks = delay_ms / portTICK_PERIOD_MS;
 	while(1) {
 		for(int pin = 12; pin < 16; pin++) {
 			HAL_GPIO_TogglePin(GPIOD, (1 << pin));
-			vTaskDelay(delay_ticks);
+			//vTaskDelay(delay_ms / portTICK_PERIOD_MS);
+			//vTaskDelay(delay_ms / portTICK_PERIOD_MS);
+			xTaskNotifyWait(0, 0, &notificationValue, portMAX_DELAY);
 			HAL_GPIO_TogglePin(GPIOD, (1 << pin));
-			vTaskDelay(delay_ticks);
+			vTaskDelay(100 / portTICK_PERIOD_MS);
+			xTaskNotifyStateClear(NULL);
 		}
 	}
 
@@ -168,7 +172,7 @@ int main(void)
 		  configMINIMAL_STACK_SIZE,
 		  0,
 		  2,
-		  0		  );
+		  &blinkerHandle);
   xTaskCreate(
 		  vTaskSendUART2_DMA,
   		  "UART2_DMA",
@@ -287,7 +291,7 @@ static void MX_USART2_UART_Init(void)
   huart2.Init.BaudRate = 9600;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
-  huart2.Init.Parity = UART_PARITY_EVEN;
+  huart2.Init.Parity = UART_PARITY_NONE;
   huart2.Init.Mode = UART_MODE_TX_RX;
   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
@@ -336,12 +340,22 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin : PA0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pins : PD12 PD13 PD14 PD15 */
   GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 
 }
 
@@ -352,6 +366,16 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	__NOP();
+}
+void HAL_GPIO_EXTI_Callback(uint16_t pin) {
+	__NOP();
+//	if(delay_ms == 500)
+//		delay_ms = 50;
+//	else
+//		delay_ms = 500;
+	//xTaskNotifyFromISR( xTaskToNotify, ulValue, eAction, pxHigherPriorityTaskWoken )
+	xTaskNotifyFromISR(blinkerHandle, 0, eNoAction, NULL);
+	//vTaskDelay(100 / portTICK_PERIOD_MS);
 }
 
 /* USER CODE END 4 */
